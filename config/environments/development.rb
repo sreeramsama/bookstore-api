@@ -14,6 +14,7 @@ Rails.application.configure do
 
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
+    ActiveSupport::Cache::Store.logger = Rails.logger
     config.action_controller.perform_caching = true
 
     config.cache_store = :file_store, "tmp/cache"
