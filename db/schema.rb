@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20161128200342) do
 
   create_table "publishing_houses", force: :cascade do |t|
     t.string   "name"
-    t.decimal  "discount",   precision: 2, scale: 2
+    t.decimal  "discount",   precision: 2, scale: 0
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
   end
