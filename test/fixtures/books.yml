@@ -5,11 +5,11 @@ one:
   price: 9.99
   author: one
   publisher: one
-  publisher_type: Publisher
+  publisher_type: Author
 
 two:
   title: MyString
   price: 9.99
   author: two
   publisher: two
-  publisher_type: Publisher
+  publisher_type: PublishingHouse
