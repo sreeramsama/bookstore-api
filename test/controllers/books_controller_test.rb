@@ -12,7 +12,8 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create book" do
     assert_difference('Book.count') do
-      post books_url, params: { book: { author_id: @book.author_id, price: @book.price, publisher_id: @book.publisher_id, publisher_type: @book.publisher_type, title: @book.title } }, as: :json
+      json_hash = ActiveModelSerializers::SerializableResource.new(@book.dup).as_json
+      post books_url, params: json_hash, as: :json
     end
 
     assert_response 201
@@ -24,7 +25,8 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update book" do
-    patch book_url(@book), params: { book: { author_id: @book.author_id, price: @book.price, publisher_id: @book.publisher_id, publisher_type: @book.publisher_type, title: @book.title } }, as: :json
+    json_hash = ActiveModelSerializers::SerializableResource.new(@book).as_json
+    patch book_url(@book), params: json_hash, as: :json
     assert_response 200
   end
 

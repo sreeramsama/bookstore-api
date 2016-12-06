@@ -32,3 +32,11 @@ bookc = Book.create(title: "Lilly Reborn", author: author4, publisher: pub3, pri
 bookd = Book.create(title: "Anathema", author: author5, publisher: author5, price: 9.41)
 booke = Book.create(title: "Best Of", author: author2, publisher: pub3, price: 12.24)
 bookf = Book.create(title: "Anyway", author: author6, publisher: pub3, price: 19.99)
+
+1000.times do
+  Book.create(title: Faker::Book.title, author: author7, publisher: pub1, price: Faker::Number.decimal(2))
+end
+
+1000.times do
+  Book.create(title: Faker::Book.title, author: author4, publisher: pub3, price: Faker::Number.decimal(2))
+end
