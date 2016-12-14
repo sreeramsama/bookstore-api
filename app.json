@@ -1,0 +1,46 @@
+{
+  "name": "bookstore-api",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:schema:load db:seed"
+  },
+  "env": {
+    "LANG": {
+      "required": true
+    },
+    "MEMCACHIER_PASSWORD": {
+      "required": true
+    },
+    "MEMCACHIER_SERVERS": {
+      "required": true
+    },
+    "MEMCACHIER_USERNAME": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_LOG_TO_STDOUT": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "memcachier",
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
