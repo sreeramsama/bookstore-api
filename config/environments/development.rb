@@ -17,7 +17,7 @@ Rails.application.configure do
     ActiveSupport::Cache::Store.logger = Rails.logger
     config.action_controller.perform_caching = true
 
-    config.cache_store = :file_store, "tmp/cache"
+    config.cache_store = :memory_store
     config.public_file_server.headers = {
       'Cache-Control' => 'public, max-age=172800'
     }
