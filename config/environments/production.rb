@@ -14,6 +14,12 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+
+  ENV["MEMCACHE_SERVERS"] = ENV["MEMCACHIER_SERVERS"]
+  ENV["MEMCACHE_USERNAME"] = ENV["MEMCACHIER_USERNAME"]
+  ENV["MEMCACHE_PASSWORD"] = ENV["MEMCACHIER_PASSWORD"]
+  
+  config.cache_store = :dalli_store
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
