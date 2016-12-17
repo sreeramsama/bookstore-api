@@ -7,15 +7,6 @@
     "LANG": {
       "required": true
     },
-    "MEMCACHIER_PASSWORD": {
-      "required": true
-    },
-    "MEMCACHIER_SERVERS": {
-      "required": true
-    },
-    "MEMCACHIER_USERNAME": {
-      "required": true
-    },
     "RACK_ENV": {
       "required": true
     },
@@ -29,7 +20,7 @@
       "required": true
     },
     "SECRET_KEY_BASE": {
-      "required": true
+      "generator": "secret"
     }
   },
   "formation": {
